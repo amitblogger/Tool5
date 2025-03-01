@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free online image tools: Compress, Resize, Remove Background, Convert to PDF, and more!">
+  <meta name="keywords" content="image compressor, image resizer, background remover, OCR, PDF converter, GIF maker, photo to cartoon">
+  <meta name="author" content="Your Name">
+  <title>Image Tools - Free Online Image Editing Tools</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      padding: 10px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 10px 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .tool-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tool-card h2 {
+      margin-top: 0;
+      color: #4a90e2;
+    }
+
+    .tool-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #333;
+      color: white;
+      margin-top: 20px;
+    }
+
+    .ad-unit {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Image Tools</h1>
+    <p>Free online tools for all your image editing needs!</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#image-compressor">Image Compressor</a></li>
+      <li><a href="#image-resizer">Image Resizer</a></li>
+      <li><a href="#background-remover">Background Remover</a></li>
+      <li><a href="#image-to-text">Image to Text (OCR)</a></li>
+      <li><a href="#image-to-pdf">Image to PDF Converter</a></li>
+      <li><a href="#watermark-remover">Watermark Remover</a></li>
+      <li><a href="#gif-maker">GIF Maker</a></li>
+      <li><a href="#photo-to-cartoon">Photo to Cartoon</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Ad Unit -->
+    <div class="ad-unit">
+      <script async src="ads/adsense-code.js"></script>
+    </div>
+
+    <!-- Tool Cards -->
+    <section class="tools-grid">
+      <div id="image-compressor" class="tool-card">
+        <h2>Image Compressor</h2>
+        <p>Compress JPEG, PNG, and WebP images without losing quality.</p>
+        <input type="file" id="image-input" accept="image/*">
+        <input type="range" id="quality" min="0" max="1" step="0.1" value="0.8">
+        <button id="compress-btn">Compress Image</button>
+        <a href="tools/image-compressor.html">Learn More</a>
+      </div>
+
+      <div id="image-resizer" class="tool-card">
+        <h2>Image Resizer</h2>
+        <p>Resize and crop images to your desired dimensions.</p>
+        <a href="tools/image-resizer.html">Use Tool</a>
+      </div>
+
+      <div id="background-remover" class="tool-card">
+        <h2>Background Remover</h2>
+        <p>Remove backgrounds from images effortlessly.</p>
+        <a href="tools/background-remover.html">Use Tool</a>
+      </div>
+
+      <div id="image-to-text" class="tool-card">
+        <h2>Image to Text (OCR)</h2>
+        <p>Extract text from images using OCR technology.</p>
+        <a href="tools/image-to-text.html">Use Tool</a>
+      </div>
+
+      <div id="image-to-pdf" class="tool-card">
+        <h2>Image to PDF Converter</h2>
+        <p>Convert images to PDF files easily.</p>
+        <a href="tools/image-to-pdf.html">Use Tool</a>
+      </div>
+
+      <div id="watermark-remover" class="tool-card">
+        <h2>Watermark Remover</h2>
+        <p>Remove watermarks from images seamlessly.</p>
+        <a href="tools/watermark-remover.html">Use Tool</a>
+      </div>
+
+      <div id="gif-maker" class="tool-card">
+        <h2>GIF Maker</h2>
+        <p>Create GIFs from images or videos.</p>
+        <a href="tools/gif-maker.html">Use Tool</a>
+      </div>
+
+      <div id="photo-to-cartoon" class="tool-card">
+        <h2>Photo to Cartoon</h2>
+        <p>Turn your photos into cartoons or avatars.</p>
+        <a href="tools/photo-to-cartoon.html">Use Tool</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Image Tools. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript for Image Compressor
+    document.getElementById('compress-btn').addEventListener('click', function () {
+      const file = document.getElementById('image-input').files[0];
+      const quality = parseFloat(document.getElementById('quality').value);
+
+      if (!file) {
+        alert('Please select an image first.');
+        return;
+      }
+
+      new Compressor(file, {
+        quality: quality,
+        success(result) {
+          const downloadLink = document.createElement('a');
+          downloadLink.href = URL.createObjectURL(result);
+          downloadLink.download = 'compressed-image.jpg';
+          downloadLink.click();
+        },
+        error(err) {
+          console.error(err.message);
+          alert('An error occurred while compressing the image.');
+        },
+      });
+    });
+  </script>
+</body>
+</html>
