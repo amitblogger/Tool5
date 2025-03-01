@@ -1,220 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free online image tools: Compress, Resize, Remove Background, Convert to PDF, and more!">
-  <meta name="keywords" content="image compressor, image resizer, background remover, OCR, PDF converter, GIF maker, photo to cartoon">
-  <meta name="author" content="Your Name">
-  <title>Image Tools - Free Online Image Editing Tools</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Image Tools - Compressor, Resizer, OCR & More</title>
+  <meta name="description" content="A fully responsive website offering various online image tools such as Image Compressor, Resizer, Background Remover, OCR, PDF Converter, and more." />
+  <meta name="keywords" content="Image Compressor, Image Resizer, Background Remover, OCR, PDF Converter, Watermark Remover, GIF Maker, Cartoon Maker" />
+  <!-- Font Awesome for icons (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
-    /* General Styles */
+    /* Global Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      background: #f5f7fa;
       color: #333;
     }
-
     header {
-      background: #4a90e2;
-      color: white;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
       padding: 20px;
       text-align: center;
     }
-
-    nav ul {
+    header h1 {
+      margin: 0;
+    }
+    nav {
       display: flex;
-      justify-content: center;
-      background: #333;
-      padding: 10px;
-      list-style: none;
       flex-wrap: wrap;
+      justify-content: center;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
-    nav ul li {
-      margin: 10px 15px;
-    }
-
-    nav ul li a {
-      color: white;
+    nav a {
+      padding: 15px 20px;
       text-decoration: none;
+      color: #333;
       font-weight: bold;
+      transition: background 0.3s ease;
     }
-
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    nav a:hover {
+      background: #2575fc;
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
       padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
     }
-
-    .tool-card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
+    section {
+      margin-bottom: 40px;
     }
-
-    .tool-card:hover {
-      transform: translateY(-5px);
+    section h2 {
+      color: #2575fc;
+      border-bottom: 2px solid #2575fc;
+      padding-bottom: 5px;
     }
-
-    .tool-card h2 {
-      margin-top: 0;
-      color: #4a90e2;
+    .tool {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background: #f9f9f9;
     }
-
-    .tool-card a {
-      display: inline-block;
+    .tool input[type="file"],
+    .tool input[type="number"] {
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .tool button {
+      background: #2575fc;
+      border: none;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+    .tool button:hover {
+      background: #6a11cb;
+    }
+    .preview {
       margin-top: 10px;
-      padding: 10px 20px;
-      background: #4a90e2;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
-
+    .ads-container {
+      text-align: center;
+      margin: 20px 0;
+      background: #e0e0e0;
+      padding: 10px;
+      border: 1px dashed #999;
+    }
     footer {
       text-align: center;
-      padding: 10px;
-      background: #333;
-      color: white;
-      margin-top: 20px;
+      padding: 20px;
+      background: #2575fc;
+      color: #fff;
     }
-
-    .ad-unit {
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    /* Responsive Design */
     @media (max-width: 768px) {
-      nav ul {
+      nav {
         flex-direction: column;
-        align-items: center;
       }
-
-      .tools-grid {
-        grid-template-columns: 1fr;
+      nav a {
+        padding: 10px;
       }
     }
   </style>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <h1>Image Tools</h1>
-    <p>Free online tools for all your image editing needs!</p>
+    <h1>Online Image Tools</h1>
+    <p>Image Compressor, Resizer, OCR, PDF Converter & More</p>
   </header>
-
   <nav>
-    <ul>
-      <li><a href="#image-compressor">Image Compressor</a></li>
-      <li><a href="#image-resizer">Image Resizer</a></li>
-      <li><a href="#background-remover">Background Remover</a></li>
-      <li><a href="#image-to-text">Image to Text (OCR)</a></li>
-      <li><a href="#image-to-pdf">Image to PDF Converter</a></li>
-      <li><a href="#watermark-remover">Watermark Remover</a></li>
-      <li><a href="#gif-maker">GIF Maker</a></li>
-      <li><a href="#photo-to-cartoon">Photo to Cartoon</a></li>
-    </ul>
+    <a href="#compressor">Image Compressor</a>
+    <a href="#resizer">Resizer & Cropper</a>
+    <a href="#background">Background Remover</a>
+    <a href="#ocr">Image to Text (OCR)</a>
+    <a href="#pdf">Image to PDF Converter</a>
+    <a href="#watermark">Watermark Remover</a>
+    <a href="#gifmaker">GIF Maker</a>
+    <a href="#cartoon">Photo to Cartoon</a>
   </nav>
-
-  <main>
-    <!-- Ad Unit -->
-    <div class="ad-unit">
-      <script async src="ads/adsense-code.js"></script>
+  <div class="container">
+    <!-- Advertisement Space -->
+    <div class="ads-container">
+      <!-- Google AdSense Code (Replace YOUR-AD-UNIT-ID with your actual ID) -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-YOUR-AD-UNIT-ID"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
 
-    <!-- Tool Cards -->
-    <section class="tools-grid">
-      <div id="image-compressor" class="tool-card">
-        <h2>Image Compressor</h2>
-        <p>Compress JPEG, PNG, and WebP images without losing quality.</p>
-        <input type="file" id="image-input" accept="image/*">
-        <input type="range" id="quality" min="0" max="1" step="0.1" value="0.8">
-        <button id="compress-btn">Compress Image</button>
-        <a href="tools/image-compressor.html">Learn More</a>
-      </div>
-
-      <div id="image-resizer" class="tool-card">
-        <h2>Image Resizer</h2>
-        <p>Resize and crop images to your desired dimensions.</p>
-        <a href="tools/image-resizer.html">Use Tool</a>
-      </div>
-
-      <div id="background-remover" class="tool-card">
-        <h2>Background Remover</h2>
-        <p>Remove backgrounds from images effortlessly.</p>
-        <a href="tools/background-remover.html">Use Tool</a>
-      </div>
-
-      <div id="image-to-text" class="tool-card">
-        <h2>Image to Text (OCR)</h2>
-        <p>Extract text from images using OCR technology.</p>
-        <a href="tools/image-to-text.html">Use Tool</a>
-      </div>
-
-      <div id="image-to-pdf" class="tool-card">
-        <h2>Image to PDF Converter</h2>
-        <p>Convert images to PDF files easily.</p>
-        <a href="tools/image-to-pdf.html">Use Tool</a>
-      </div>
-
-      <div id="watermark-remover" class="tool-card">
-        <h2>Watermark Remover</h2>
-        <p>Remove watermarks from images seamlessly.</p>
-        <a href="tools/watermark-remover.html">Use Tool</a>
-      </div>
-
-      <div id="gif-maker" class="tool-card">
-        <h2>GIF Maker</h2>
-        <p>Create GIFs from images or videos.</p>
-        <a href="tools/gif-maker.html">Use Tool</a>
-      </div>
-
-      <div id="photo-to-cartoon" class="tool-card">
-        <h2>Photo to Cartoon</h2>
-        <p>Turn your photos into cartoons or avatars.</p>
-        <a href="tools/photo-to-cartoon.html">Use Tool</a>
+    <!-- 1. Image Compressor -->
+    <section id="compressor">
+      <h2>Image Compressor (JPEG/PNG/WebP)</h2>
+      <div class="tool" id="compressor-tool">
+        <input type="file" accept="image/*" id="compressor-input" />
+        <br />
+        <button onclick="compressImage()">Compress Image</button>
+        <br />
+        <canvas id="compressor-canvas" class="preview"></canvas>
       </div>
     </section>
-  </main>
 
+    <!-- 2. Image Resizer & Cropper -->
+    <section id="resizer">
+      <h2>Image Resizer & Cropper</h2>
+      <div class="tool" id="resizer-tool">
+        <input type="file" accept="image/*" id="resizer-input" />
+        <br />
+        <label for="resize-width">Width:</label>
+        <input type="number" id="resize-width" placeholder="Width" />
+        <label for="resize-height">Height:</label>
+        <input type="number" id="resize-height" placeholder="Height" />
+        <br />
+        <button onclick="resizeImage()">Resize Image</button>
+        <br />
+        <canvas id="resizer-canvas" class="preview"></canvas>
+      </div>
+    </section>
+
+    <!-- 3. Background Remover -->
+    <section id="background">
+      <h2>Background Remover</h2>
+      <div class="tool" id="background-tool">
+        <input type="file" accept="image/*" id="background-input" />
+        <br />
+        <button onclick="removeBackground()">Remove Background</button>
+        <br />
+        <canvas id="background-canvas" class="preview"></canvas>
+      </div>
+    </section>
+
+    <!-- 4. Image to Text (OCR) -->
+    <section id="ocr">
+      <h2>Image to Text (OCR)</h2>
+      <div class="tool" id="ocr-tool">
+        <input type="file" accept="image/*" id="ocr-input" />
+        <br />
+        <button onclick="performOCR()">Extract Text</button>
+        <br />
+        <div id="ocr-result"></div>
+      </div>
+    </section>
+
+    <!-- 5. Image to PDF Converter -->
+    <section id="pdf">
+      <h2>Image to PDF Converter</h2>
+      <div class="tool" id="pdf-tool">
+        <input type="file" accept="image/*" id="pdf-input" />
+        <br />
+        <button onclick="convertToPDF()">Convert to PDF</button>
+        <br />
+        <div id="pdf-result"></div>
+      </div>
+    </section>
+
+    <!-- 6. Watermark Remover -->
+    <section id="watermark">
+      <h2>Watermark Remover</h2>
+      <div class="tool" id="watermark-tool">
+        <input type="file" accept="image/*" id="watermark-input" />
+        <br />
+        <button onclick="removeWatermark()">Remove Watermark</button>
+        <br />
+        <canvas id="watermark-canvas" class="preview"></canvas>
+      </div>
+    </section>
+
+    <!-- 7. GIF Maker -->
+    <section id="gifmaker">
+      <h2>GIF Maker</h2>
+      <div class="tool" id="gifmaker-tool">
+        <input type="file" accept="image/*" id="gifmaker-input" multiple />
+        <br />
+        <button onclick="makeGIF()">Create GIF</button>
+        <br />
+        <img id="gif-result" class="preview" alt="Generated GIF" />
+      </div>
+    </section>
+
+    <!-- 8. Photo to Cartoon/Avatar Maker -->
+    <section id="cartoon">
+      <h2>Photo to Cartoon/Avatar Maker</h2>
+      <div class="tool" id="cartoon-tool">
+        <input type="file" accept="image/*" id="cartoon-input" />
+        <br />
+        <button onclick="makeCartoon()">Convert to Cartoon</button>
+        <br />
+        <canvas id="cartoon-canvas" class="preview"></canvas>
+      </div>
+    </section>
+  </div>
   <footer>
-    <p>&copy; 2023 Image Tools. All rights reserved.</p>
+    <p>&copy; 2025 Online Image Tools. All Rights Reserved.</p>
   </footer>
 
   <script>
-    // JavaScript for Image Compressor
-    document.getElementById('compress-btn').addEventListener('click', function () {
-      const file = document.getElementById('image-input').files[0];
-      const quality = parseFloat(document.getElementById('quality').value);
-
-      if (!file) {
-        alert('Please select an image first.');
-        return;
+    /* 1. Image Compressor */
+    function compressImage() {
+      const input = document.getElementById("compressor-input");
+      const canvas = document.getElementById("compressor-canvas");
+      const ctx = canvas.getContext("2d");
+      if (input.files && input.files[0]) {
+        const img = new Image();
+        img.onload = function () {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+          // Compress image by reducing quality (0.5 example)
+          const compressedData = canvas.toDataURL("image/jpeg", 0.5);
+          const compressedImg = new Image();
+          compressedImg.onload = function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(compressedImg, 0, 0, canvas.width, canvas.height);
+          };
+          compressedImg.src = compressedData;
+        };
+        img.src = URL.createObjectURL(input.files[0]);
       }
+    }
 
-      new Compressor(file, {
-        quality: quality,
-        success(result) {
-          const downloadLink = document.createElement('a');
-          downloadLink.href = URL.createObjectURL(result);
-          downloadLink.download = 'compressed-image.jpg';
-          downloadLink.click();
-        },
-        error(err) {
-          console.error(err.message);
-          alert('An error occurred while compressing the image.');
-        },
-      });
-    });
+    /* 2. Image Resizer & Cropper */
+    function resizeImage() {
+      const input = document.getElementById("resizer-input");
+      const canvas = document.getElementById("resizer-canvas");
+      const ctx = canvas.getContext("2d");
+      const width = parseInt(document.getElementById("resize-width").value) || 300;
+      const height = parseInt(document.getElementById("resize-height").value) || 300;
+      if (input.files && input.files[0]) {
+        const img = new Image();
+        img.onload = function () {
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(img, 0, 0, width, height);
+        };
+        img.src = URL.createObjectURL(input.files[0]);
+      }
+    }
+
+    /* 3. Background Remover (Placeholder) */
+    function removeBackground() {
+      alert("Background remover functionality is not implemented yet.");
+    }
+
+    /* 4. Image to Text (OCR) using Tesseract.js */
+    function performOCR() {
+      const input = document.getElementById("ocr-input");
+      const resultDiv = document.getElementById("ocr-result");
+      if (input.files && input.files[0]) {
+        resultDiv.innerHTML = "Performing OCR... (This may take a few seconds)";
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/tesseract.min.js";
+        script.onload = function () {
+          Tesseract.recognize(URL.createObjectURL(input.files[0]), "eng").then(
+            ({ data: { text } }) => {
+              resultDiv.innerHTML = "<strong>Extracted Text:</strong><br>" + text;
+            }
+          );
+        };
+        document.body.appendChild(script);
+      }
+    }
+
+    /* 5. Image to PDF Converter using jsPDF */
+    function convertToPDF() {
+      const input = document.getElementById("pdf-input");
+      const resultDiv = document.getElementById("pdf-result");
+      if (input.files && input.files[0]) {
+        const img = new Image();
+        img.onload = function () {
+          const script = document.createElement("script");
+          script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+          script.onload = function () {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF("p", "pt", [img.width, img.height]);
+            pdf.addImage(img, "JPEG", 0, 0, img.width, img.height);
+            resultDiv.innerHTML =
+              '<a href="' + pdf.output("bloburl") + '" target="_blank">Download PDF</a>';
+          };
+          document.body.appendChild(script);
+        };
+        img.src = URL.createObjectURL(input.files[0]);
+      }
+    }
+
+    /* 6. Watermark Remover (Placeholder) */
+    function removeWatermark() {
+      alert("Watermark remover functionality is not implemented yet.");
+    }
+
+    /* 7. GIF Maker (Placeholder) */
+    function makeGIF() {
+      alert("GIF maker functionality is not implemented yet.");
+    }
+
+    /* 8. Photo to Cartoon/Avatar Maker (Placeholder) */
+    function makeCartoon() {
+      alert("Photo to Cartoon/Avatar Maker functionality is not implemented yet.");
+    }
   </script>
 </body>
 </html>
